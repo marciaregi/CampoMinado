@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="campominado.marcia.com.br.campominado.MainActivity"
+    android:background="@drawable/fundo">
+
+    <Button
+        android:layout_width="205dp"
+        android:layout_height="68dp"
+        android:text="JOGAR"
+        tools:layout_editor_absoluteY="123dp"
+        tools:layout_editor_absoluteX="80dp"
+        android:id="@+id/buttonJogar"
+        android:layout_marginTop="169dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+    <Button
+        android:id="@+id/buttonSobre"
+        android:layout_width="169dp"
+        android:layout_height="67dp"
+        android:text="SOBRE"
+        tools:layout_editor_absoluteY="255dp"
+        tools:layout_editor_absoluteX="89dp"
+        android:layout_marginTop="48dp"
+        android:layout_below="@+id/buttonJogar"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
+
+

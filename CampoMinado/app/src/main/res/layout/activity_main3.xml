@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="campominado.marcia.com.br.campominado.Main3Activity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:textAlignment="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="
+        SOBRE:
+        Campo minado é um popular jogo de computador para
+        um jogador. Foi inventado por Robert Donner em 1989 e
+        tem como objetivo revelar um campo de minas sem que
+        alguma seja detonada.Este jogo tem sido reescrito para
+        as mais diversas plataformas, sendo a sua versão mais
+        popular a que vinha nativamente nas edições anteriores
+        ao Windows 10. Em nossa versão desenvolvida para a
+        disciplina de S.O ministrada pelo professor Dr. Frederico
+        Nogueira Leite no curso de Ciência da computação do
+        Instituto Federal de Brasília, optamos por desenvolver
+        para a plataforma android por ser atualmente a com
+        maior quantidade de usuários quando se trata de
+        smartphones.
+
+         Desenvolvedores
+         Marcia Regina
+         Willian S. Farias"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="110dp" />
+</RelativeLayout>
