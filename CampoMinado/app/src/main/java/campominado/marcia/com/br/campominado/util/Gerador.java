@@ -1,6 +1,7 @@
 package campominado.marcia.com.br.campominado.util;
 
 import java.util.Random;
+import static java.lang.Thread.sleep;
 
 /**
  * Created by marcia on 27/10/2017.
@@ -16,21 +17,57 @@ public class Gerador {
         for( int x = 0 ; x< largura ;x++ ){
             grid[x] = new int[altura];
         }
+        int timer = 0;
+        int splashTime = 1000;
+        int contador=0;
 
-        while( bombanumero > 0 ){
-            int x = r.nextInt(largura);
-            int y = r.nextInt(altura);
+        Thread th = new Thread() {
 
-            // -1 e a bomba
-            if( grid[x][y] != -1 ){
-                grid[x][y] = -1;
-                bombanumero--;
+            @Override
+            public void run() {
+                try {
+                    for (timer = 0; timer < 3; timer++) {
+                        int waited = 0;
+                        while (waited < splashTime) {
+                            Thread.sleep(5000);
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    try {
+                                            Thread.sleep(5000);
+
+                                        while( bombanumero > 0 ){
+                                            int x = r.nextInt(largura);
+                                            int y = r.nextInt(altura);
+
+                                            // -1 e a bomba
+                                            if( grid[x][y] != -1 ){
+                                                grid[x][y] = -1;
+                                                bombanumero--;
+                                            }
+                                        }
+                                        grid = calcularVizinhos(grid,largura,altura);
+
+                                            contador = 0;
+                                        return grid;
+
+                                    }
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            });
+                            waited += 100;
+                        }
+                    }
+                } catch (InterruptedException e) {
+                }
+
             }
-        }
-        grid = calcularVizinhos(grid,largura,altura);
-
-        return grid;
+        };
+        th.start();
     }
+
 
     private static int[][] calcularVizinhos( int[][] grid , final int largura , final int altura){
         for( int x = 0 ; x < largura ; x++){
