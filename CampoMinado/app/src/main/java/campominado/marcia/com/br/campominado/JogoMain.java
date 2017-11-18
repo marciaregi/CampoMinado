@@ -35,7 +35,6 @@ public class JogoMain {
         Log.e("GameEngine","createGrid is working");
         this.context = context;
 
-        // create the grid and store it
         int[][] GeneratedGrid = Gerador.generate(NUMERO_BOMBA,LARGURA, ALTURA);
         PrintConsole.print(GeneratedGrid,LARGURA,ALTURA);
         setGrid(context,GeneratedGrid);
@@ -114,7 +113,6 @@ public class JogoMain {
     }
 
     private void onGameLost(){
-        // handle lost game
         Toast.makeText(context,"Você perdeu :(", Toast.LENGTH_SHORT).show();
 
         for ( int x = 0 ; x < LARGURA ; x++ ) {
